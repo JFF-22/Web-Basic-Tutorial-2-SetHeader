@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--
+Case Study 1
+Yeo Ewe Wen
+20DDT20F1016
+-->
+<html>
+    <head>
+        <title>Malaysia Job Application</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function verify(){
+                var fullname = document.ApplicationForm.name.value;
+                var IC = document.ApplicationForm.IC.value;
+                var Address = document.ApplicationForm.address.value;
+                var Age = document.ApplicationForm.age.value;
+                
+                var numbers = /^[0-9]+$/;
+                
+                if (fullname.length === 0){
+                    alert("Please enter your full name.");
+                    return (false);
+                }
+                if ((IC.length !== 12) || !(IC.toString().match(numbers))){
+                    alert("Please enter your IC number properly.");
+                    return (false);
+                }
+                if (Address.length === 0){
+                    alert("Please enter your address.");
+                    return (false);
+                }
+                if (Age.length === 0){
+                    alert("Please enter your age.");
+                    return (false);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h2>Malaysia Job Application</h2>
+        <form name="ApplicationForm" action="Application" method="POST">
+            <table>
+                <tr>
+                    <td> Full Name </td>
+                    <td> : </td>
+                    <td><input type="text" name="name"></td>
+                </tr>
+                <tr>
+                    <td> IC Number </td>
+                    <td> : </td>
+                    <td><input type="text" name="IC"></td>
+                </tr>
+                <tr>
+                    <td> Address <br><br><br><br></td>
+                    <td> : <br><br><br><br></td>
+                    <td><textarea cols="20" rows="5" name="address"></textarea></td>
+                </tr>
+                <tr>
+                    <td> Age </td>
+                    <td> : </td>
+                    <td><input type="number" name="age"></td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <input type="submit" value="Apply" onclick="return(verify())">
+                        <input type="reset" value="Reset">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
