@@ -1,8 +1,4 @@
-/*
-Case Study 1
-Yeo Ewe Wen
-20DDT20F1016
- */
+
 
 import java.io.IOException;
 import java.io.PrintWriter;
